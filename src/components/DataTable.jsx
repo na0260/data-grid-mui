@@ -1,7 +1,7 @@
 'use client';
 import React, {useEffect, useState} from 'react';
 import {DataGrid} from '@mui/x-data-grid';
-import Image from "next/image";
+import DataToolbar from "@/components/DataToolbar";
 
 const columns = [
     { field: 'id', headerName: 'ID', width: 100 },
@@ -54,7 +54,15 @@ const DataTable = () => {
 
     return (
         <>
-            <DataGrid sx={{height: 800}} loading={loading} rows={books} columns={columns} pageSize={5} checkboxSelection />
+            <DataGrid
+                slots={{ toolbar: DataToolbar }}
+                sx={{height: 800}}
+                loading={loading}
+                rows={books}
+                columns={columns}
+                pageSize={5}
+                checkboxSelection
+            />
         </>
     );
 };
