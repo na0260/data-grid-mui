@@ -55,7 +55,9 @@ const DataTable = () => {
     return (
         <>
             <DataGrid
-                slots={{ toolbar: DataToolbar }}
+                slots={{
+                    toolbar: DataToolbar,
+                }}
                 sx={{height: 800}}
                 loading={loading}
                 rows={books}
